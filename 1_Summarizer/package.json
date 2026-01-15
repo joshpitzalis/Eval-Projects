@@ -1,29 +1,26 @@
 {
-  "name": "1_summarizer",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "tsx src/index.ts",
-    "eval": "evalite"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "@ai-sdk/google": "^3.0.7",
-    "@ai-sdk/openai": "^3.0.9",
-    "@types/node": "^25.0.7",
-    "ai": "^6.0.31",
-    "dotenv": "^17.2.3",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3",
-    "zod": "^4.3.5"
-  },
-  "devDependencies": {
-    "autoevals": "^0.0.131",
-    "evalite": "1.0.0-beta.15",
-    "vitest": "^4.0.17"
-  }
+	"name": "1_summarizer",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "tsx src/index.ts",
+		"eval": "evalite"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"dependencies": {
+		"@ai-sdk/google": "^3.0.7",
+		"@types/node": "^25.0.7",
+		"ai": "^6.0.31",
+		"dotenv": "^17.2.3",
+		"tsx": "^4.21.0",
+		"typescript": "^5.9.3"
+	},
+	"devDependencies": {
+		"evalite": "1.0.0-beta.15",
+		"vitest": "^4.0.17"
+	}
 }

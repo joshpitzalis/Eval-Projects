@@ -1,51 +1,69 @@
-import { evalite } from "evalite";
-import { summarize } from "./index";
-import { faithfulness } from "evalite/scorers";
 import { google } from "@ai-sdk/google";
+import { generateText } from "ai";
+import { evalite } from "evalite";
+import { faithfulness } from "evalite/scorers";
 import dataset from "./dataset.json";
-import { containsActionItems, clarity, coverage } from "./scorers";
+import { clarity, coverage } from "./scorers";
 
-evalite("My Eval", {
-  // An array of test data
-  // - TODO: Replace with your test data
+evalite.each([
+	{
+		name: "Variant A",
+		input: {
+			prompt: (text: string) =>
+				`Summarize the following text concisely:\n\n${text}`,
+		},
+	},
+	{
+		name: "Variant B",
+		input: {
+			prompt: (text: string) =>
+				`You will be summarizing a text passage. Here is the text you need to summarize:
+    <text>
+    ${text}
+    </text>
+    Please provide a concise summary of this text. Your summary should:
+    - Capture the main points and key information from the original text
+    - Be significantly shorter than the original while retaining the essential meaning
+    - Use clear, straightforward language
+    - Omit minor details, examples, and redundant information
+    - Be written in complete sentences
 
-  data: dataset,
+    Write your summary directly as your response. Do not include any preamble or meta-commentary about the summarization task itself.`,
+		},
+	},
+])("My First Eval", {
+	data: dataset,
 
-  // data: [
-  //   {
-  //     input:
-  //       "Artificial intelligence is transforming the way we work and live. Machine learning algorithms can now process vast amounts of data and identify patterns that humans might miss. This technology is being applied in healthcare, finance, transportation, and many other industries.",
-  //     expected: "Hello World!",
-  //   },
-  // ],
+	task: async (input, variant) => {
+		const { text } = await generateText({
+			model: google("gemini-2.5-flash-lite"),
+			prompt: variant.prompt(input),
+		});
 
-  // The task to perform
-  // - TODO: Replace with your LLM call
-  task: async (input) => {
-    return summarize(input);
-  },
-  // The scoring methods for the eval
-  scorers: [
-    {
-      name: "Faithfulness",
-      description: "No new facts, names, numbers, or events not in the source",
-      scorer: ({ input, output }) =>
-        faithfulness({
-          question: input,
-          answer: output,
-          groundTruth: [input],
-          model: google("gemini-2.5-flash-lite"),
-        }),
-    },
-    {
-      name: "Conciseness",
-      description: "Output <= 120 words",
-      scorer: ({ output }) => {
-        return output.split(" ").length <= 120 ? 1 : 0;
-      },
-    },
-    // containsActionItems,
-    clarity,
-    coverage,
-  ],
+		return text;
+	},
+
+	scorers: [
+		{
+			name: "Faithfulness",
+			description: "No new facts, names, numbers, or events not in the source",
+			scorer: ({ input, output }) =>
+				faithfulness({
+					question: input,
+					answer: output,
+					groundTruth: [input],
+					// @ts-expect-error
+					model: google("gemini-2.5-flash-lite"),
+				}),
+		},
+		{
+			name: "Conciseness",
+			description: "Output <= 120 words",
+			scorer: ({ output }) => {
+				return output.split(" ").length <= 120 ? 1 : 0;
+			},
+		},
+		clarity,
+		coverage,
+	],
 });
