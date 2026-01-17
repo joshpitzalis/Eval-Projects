@@ -1,0 +1,13 @@
+[{"doc_id":"d1","title":"Refund Policy","text":"Refunds are available within 30 days of purchase. After 30 days, refunds are not available, but store credit may be offered at support discretion."},
+{"doc_id":"d2","title":"Billing - Duplicate Charges","text":"If a customer is charged twice, request the order ID and the last four digits of the payment method. Confirm duplicate transaction IDs and issue a refund for the duplicate charge within 5-7 business days."},
+{"doc_id":"d3","title":"Password Reset","text":"To reset a password, direct the user to the password reset page. Do not request passwords. Ask for the account email and provide secure verification steps."},
+{"doc_id":"d4","title":"Privacy - Data Deletion (EU)","text":"EU users may request data deletion. Confirm identity and route the request to the Privacy team. Provide an expected completion timeline of up to 30 days."},
+{"doc_id":"d5","title":"Shipping Delays","text":"For late shipments, provide tracking instructions, confirm the shipping address, and offer escalation if the package is delayed more than 7 days beyond the expected delivery date."},
+{"doc_id":"d6","title":"Safety Refusals","text":"If a user requests illegal or harmful instructions, refuse clearly, do not provide operational details, and offer safe alternatives or resources."},
+{"doc_id":"d7","title":"Account Access Verification","text":"If a user cannot remember the email, request non-sensitive verification signals (e.g., username, approximate creation date) and escalate to support. Do not reveal account details."},
+{"doc_id":"d8","title":"Subscription Cancellation","text":"Users can cancel anytime. Billing stops at the end of the current billing cycle. If cancellation occurs after renewal, the subscription remains active until the next renewal date."},
+{"doc_id":"d9","title":"Tone Guidelines","text":"Maintain a professional, calm, and empathetic tone. Avoid blame. Acknowledge frustration and provide clear next steps."},
+{"doc_id":"d10","title":"Release Process","text":"For releases, freeze merges 48 hours before launch. Prepare release notes by the end of the freeze window. Run regression tests before deployment."},
+{"doc_id":"d11","title":"RAG Grounding","text":"A grounded answer cites and aligns with retrieved sources. Hallucinations are claims not supported by retrieved documents."},
+{"doc_id":"d12","title":"Escalation Policy","text":"Escalate when a request involves privacy, payment disputes, or account access issues. Provide timelines and reference ID when possible."}
+]

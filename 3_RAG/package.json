@@ -1,0 +1,25 @@
+{
+	"name": "3_RAG",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "tsx src/index.ts",
+		"embed": "tsx src/generateEmbeddings.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@ai-sdk/openai": "^3.0.12",
+		"ai": "^6.0.39",
+		"dotenv": "^17.2.3",
+		"tsx": "^4.21.0"
+	},
+	"devDependencies": {
+		"@types/node": "^25.0.9",
+		"evalite": "1.0.0-beta.15",
+		"typescript": "^5.9.3",
+		"vitest": "^4.0.17"
+	}
+}
