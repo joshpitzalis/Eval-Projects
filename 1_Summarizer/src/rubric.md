@@ -23,7 +23,7 @@
 
 - Output <= 120 words
 
-2. Coverage
+2. ✅ Coverage
 
 - Includes the 3–5 most important points from the input
 

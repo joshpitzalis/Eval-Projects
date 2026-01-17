@@ -1,6 +1,8 @@
 # To Explore
 
-- [x] Evalite
+- [x] Setting up a basic test harness
+- [x] Aligning your LLM judge
+- [ ] Tracing
 - [ ] CI/CD
 - [ ] User simulation w/Scenario
 - [ ] setting up chatkit
@@ -9,4 +11,4 @@
 - [ ] DSPy
 - [ ] Open AI evaluations toolset
 - [ ] Chaos testing w/Flakestorm
-- [ ] testing Images And Media
+- [ ] Testing Images And Media

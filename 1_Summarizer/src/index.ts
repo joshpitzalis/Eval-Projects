@@ -32,4 +32,7 @@ async function main() {
 	}
 }
 
-main().catch(console.error);
+// Only run main() if this file is being executed directly (not imported)
+if (require.main === module) {
+	main().catch(console.error);
+}
