@@ -19,10 +19,10 @@ You will need an LLM API key with some credit on it (I've used [OpenAI](https://
 
 Once you have the API key, create a .env file and save your API key (please git ignore your .env file if you plan on sharing the code publicly):
 ```
-OPENAI_API_KEY==your_api_key
+OPENAI_API_KEY=your_api_key
 ```
 
-You'll also need a `ts.config`file to configure the TypeScript compiler:
+You'll also need a `tsconfig.json`file to configure the TypeScript compiler:
 ```
 {
 	"compilerOptions": {
@@ -177,6 +177,14 @@ evalite("My Eval", {
 		},
 	],
 });
+```
+
+Finally, create a script to run the Support bot in your `package.json`
+```
+"scripts": {
+  "start": "tsx src/index.ts",
+  "eval": "evalite"
+},
 ```
 Now, run your evals `pnpm run eval`, and you should see the AI model's responses in your console. If everything is set up correctly, you should see a suite of evaluation results in your console. I got a 58% pass rate when I ran this.
  

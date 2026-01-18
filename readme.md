@@ -2,9 +2,11 @@
 
 - [x] Setting up a basic test harness
 - [x] Aligning your LLM judge
-- [ ] Tracing
+- [ ] Testing RAG
+- [ ] Multi-turn (User simulation w/Scenario)
 - [ ] CI/CD
-- [ ] User simulation w/Scenario
+
+- [ ] Tracing
 - [ ] setting up chatkit
 - [ ] setting up formal tools like Arize, Braintrust, langfuse, etc
 - [ ] Industry metrics like BLEU, ROUGE, BERTScore
