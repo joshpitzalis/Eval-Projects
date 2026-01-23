@@ -1,0 +1,16 @@
+{
+	"name": "scenarios",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "npx vitest run tests/vegetarian-recipe.test.ts"
+	},
+	"dependencies": {
+		"@ai-sdk/openai": "^3.0.18",
+		"@langwatch/scenario": "^0.4.0",
+		"ai": "^6.0.48",
+		"dotenv": "^17.2.3",
+		"vitest": "^4.0.18"
+	}
+}

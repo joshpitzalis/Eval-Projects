@@ -7,7 +7,7 @@
 - [ ] CI/CD
 
 - [ ] Tracing
-- [ ] setting up chatkit
+- [ ] setting up chatkit / vercel ui components
 - [ ] setting up formal tools like Arize, Braintrust, langfuse, etc
 - [ ] Industry metrics like BLEU, ROUGE, BERTScore
 - [ ] DSPy
